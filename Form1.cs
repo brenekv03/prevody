@@ -16,11 +16,24 @@ namespace prevody
         {
             InitializeComponent();
         }
+        CiselneSoustavy ciselneSoustavy = new CiselneSoustavy();
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CiselneSoustavy ciselneSoustavy = new CiselneSoustavy();
+            int x = int.Parse(textBox1.Text);
             MessageBox.Show(ciselneSoustavy.BinToDec(11011));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int x = int.Parse(textBox1.Text);
+            MessageBox.Show("Převod z dec do bin: "+ciselneSoustavy.DecToBin(x));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string x = textBox1.Text;
+            MessageBox.Show("Převod z Hex do dec: " + ciselneSoustavy.HexToDec(x));
         }
     }
 }
