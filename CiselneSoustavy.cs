@@ -166,11 +166,45 @@ namespace prevody
         }
         public string BinToHex(string bin)
         {
+            //1248
             int delka = bin.Length;
             string hex = "";
-            for(int i = delka-1;delka>=0;i--)
+            for(int i = delka-1;delka>0;i--)
             {
-
+                string sub = bin.Substring(i - 3);
+                int cifra = 0;
+                if (sub[0] == '1') cifra += 8;
+                if (sub[1] == '1') cifra += 4;
+                if (sub[2] == '1') cifra += 2;
+                if (sub[3] == '1') cifra += 1;
+                if (cifra >= 0 && cifra <= 9)
+                {
+                    hex = hex.Insert(0, cifra.ToString());
+                }
+                else if (cifra == 10)
+                {
+                    hex = hex.Insert(0, 'A'.ToString());
+                }
+                else if (cifra == 11)
+                {
+                    hex = hex.Insert(0, 'B'.ToString());
+                }
+                else if (cifra == 12)
+                {
+                    hex = hex.Insert(0, 'C'.ToString());
+                }
+                else if (cifra == 13)
+                {
+                    hex = hex.Insert(0, 'D'.ToString());
+                }
+                else if (cifra == 14)
+                {
+                    hex = hex.Insert(0, 'E'.ToString());
+                }
+                else if (cifra == 15)
+                {
+                    hex = hex.Insert(0, 'F'.ToString());
+                }
             }
             return hex;
         }

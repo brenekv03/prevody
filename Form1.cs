@@ -47,5 +47,12 @@ namespace prevody
             MessageBox.Show("Převod z Dec do HeX: " + ciselneSoustavy.DecToHex(x));
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string x = textBox1.Text;
+            MessageBox.Show("Převod z Bin do Hex: " + ciselneSoustavy.BinToHex(x));
+
+        }
     }
 }
