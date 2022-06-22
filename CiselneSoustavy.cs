@@ -164,5 +164,21 @@ namespace prevody
             }
             return hex;
         }
+        public string BinToHex(string bin)
+        {
+            int delka = bin.Length;
+            string hex = "";
+            for(int i = delka-1;delka>=0;i--)
+            {
+
+            }
+            return hex;
+        }
+        public string HexToBin(string hex)
+        {
+            int delka = hex.Length;
+            string bin = "";
+            return bin;
+        }
     }
 }
