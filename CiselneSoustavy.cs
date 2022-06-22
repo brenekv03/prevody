@@ -8,19 +8,19 @@ namespace prevody
 {
     class CiselneSoustavy
     {
-        public string BinToDec(int bin)
+        public int BinToDec(string bin)
         {
-            double celek=0;
-            for(int i = 0;bin>0;i++)
+            int d = bin.Length;
+            int mocnina = 1;
+            int desCislo = 0;
+            for(int i = d-1;i>=0;i--)
             {
-                int cislo = bin % 10;
-                if(cislo==1)
+                if(bin[i]=='1')
                 {
-                    celek += Math.Pow(2, i);
+                    desCislo += mocnina;
                 }
-                bin /= 10;
             }
-            return celek.ToString();
+            return desCislo;
         }
         public string DecToBin(int dec)
         {
@@ -132,35 +132,37 @@ namespace prevody
             while(dec>0)
             {
                 zbytek = dec % 16;
-                if(zbytek>='0'&&zbytek<='9')
+                if(zbytek>=0&&zbytek<=9)
                 {
-                    hex.Insert(0, zbytek.ToString());
+                   hex= hex.Insert(0, zbytek.ToString());
                 }
                 else if(zbytek==10)
                 {
-                    hex.Insert(0, 10.ToString());
+                    hex = hex.Insert(0, 'A'.ToString());
                 }
                 else if (zbytek == 11)
                 {
-                    hex.Insert(0, 11.ToString());
+                    hex = hex.Insert(0, 'B'.ToString());
                 }
                 else if (zbytek == 12)
                 {
-                    hex.Insert(0, 12.ToString());
+                    hex = hex.Insert(0, 'C'.ToString());
                 }
                 else if (zbytek == 13)
                 {
-                    hex.Insert(0, 13.ToString());
+                    hex = hex.Insert(0, 'D'.ToString());
                 }
                 else if (zbytek == 14)
                 {
-                    hex.Insert(0, 14.ToString());
+                    hex = hex.Insert(0, 'E'.ToString());
                 }
                 else if (zbytek == 15)
                 {
-                    hex.Insert(0, 15.ToString());
+                    hex = hex.Insert(0, 'F'.ToString());
                 }
+                dec /= 16;
             }
+            return hex;
         }
     }
 }

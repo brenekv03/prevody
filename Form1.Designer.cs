@@ -75,6 +75,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "DEC TO HEX";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -93,6 +94,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "HEX TO BIN";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox1
             // 

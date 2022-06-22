@@ -20,8 +20,8 @@ namespace prevody
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int x = int.Parse(textBox1.Text);
-            MessageBox.Show(ciselneSoustavy.BinToDec(11011));
+            string x = textBox1.Text;
+            //MessageBox.Show(ciselneSoustavy.BinToDec(x);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,6 +34,18 @@ namespace prevody
         {
             string x = textBox1.Text;
             MessageBox.Show("Převod z Hex do dec: " + ciselneSoustavy.HexToDec(x));
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int x = int.Parse(textBox1.Text);
+            MessageBox.Show("Převod z Dec do HeX: " + ciselneSoustavy.DecToHex(x));
+
         }
     }
 }
