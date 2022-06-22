@@ -53,72 +53,13 @@ namespace prevody
                     moc *= cislo;
                     Dec += moc;
                 }
-                else if(hex[i]=='A')
+                //if(hexcislo[i]<=9)
+                cifra = hexcislo[i]-'0'
+                //else
                 {
-                    int cislo = 10;
-                    int moc = 1;
-                    for (int j = mocnina; j > 0; j--)
-                    {
-                        moc *= 16;
-                    }
-                    moc *= cislo;
-                    Dec += moc;
+                    cifra = hexCislo[i] - 'a' + 10;
                 }
-                else if (hex[i] == 'B')
-                {
-                    int cislo = 11;
-                    int moc = 1;
-                    for (int j = mocnina; j > 0; j--)
-                    {
-                        moc *= 16;
-                    }
-                    moc *= cislo;
-                    Dec += moc;
-                }
-                else if (hex[i] == 'C')
-                {
-                    int cislo = 12;
-                    int moc = 1;
-                    for (int j = mocnina; j > 0; j--)
-                    {
-                        moc *= 16;
-                    }
-                    moc *= cislo;
-                    Dec += moc;
-                }
-                else if (hex[i] == 'D')
-                {
-                    int cislo = 13;
-                    int moc = 1;
-                    for (int j = mocnina; j > 0; j--)
-                    {
-                        moc *= 16;
-                    }
-                    moc *= cislo;
-                    Dec += moc;
-                }
-                else if (hex[i] == 'E')
-                {
-                    int cislo = 14;
-                    int moc = 1;
-                    for (int j = mocnina; j > 0; j--)
-                    {
-                        moc *= 16;
-                    }
-                    moc *= cislo;
-                    Dec += moc;
-                }
-                else if (hex[i] == 'F')
-                {
-                    int cislo = 15;
-                    int moc = 1;
-                    for (int j = mocnina; j > 0; j--)
-                    {
-                        moc *= 16;
-                    }
-                    moc *= cislo;
-                    Dec += moc;
-                }
+              
                 i--;
                 mocnina++;
                 hex =hex.Remove(hex.Length - 1);
@@ -136,30 +77,13 @@ namespace prevody
                 {
                    hex= hex.Insert(0, zbytek.ToString());
                 }
-                else if(zbytek==10)
+                else
                 {
-                    hex = hex.Insert(0, 'A'.ToString());
+                    char znakCifry = (char)('A' + zbytek - 10);
+                    hex= hex.Insert(0, znakCifry.ToString());
+
                 }
-                else if (zbytek == 11)
-                {
-                    hex = hex.Insert(0, 'B'.ToString());
-                }
-                else if (zbytek == 12)
-                {
-                    hex = hex.Insert(0, 'C'.ToString());
-                }
-                else if (zbytek == 13)
-                {
-                    hex = hex.Insert(0, 'D'.ToString());
-                }
-                else if (zbytek == 14)
-                {
-                    hex = hex.Insert(0, 'E'.ToString());
-                }
-                else if (zbytek == 15)
-                {
-                    hex = hex.Insert(0, 'F'.ToString());
-                }
+
                 dec /= 16;
             }
             return hex;
