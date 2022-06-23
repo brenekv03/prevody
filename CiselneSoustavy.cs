@@ -161,11 +161,105 @@ namespace prevody
             }
             return hex;
         }
+
         public string BinToHex(string bin)
         {
             //1248
-            string dec = BinToDec(int.Parse(bin));
-            string hex = DecToHex(int.Parse(dec));
+            int delka = bin.Length;
+            string hex="";
+            while (delka % 4!= 0)
+            {
+                bin = bin.Insert(0, "0");
+                delka++;
+            }
+            while(delka>0)
+            {
+                string substr = bin.Substring(0, 4);
+                bin = bin.Remove(0, 4);
+                delka -= 4;
+                switch(substr)
+                {
+                    case "0000":
+                        {
+                            hex = hex.Insert(hex.Length, "0");
+                        }
+                        break;
+                    case "0001":
+                        {
+                            hex = hex.Insert(hex.Length, "1");
+                        }break;
+                    case "0010":
+                        {
+                            hex = hex.Insert(hex.Length, "2");
+                        }
+                        break;
+                    case "0011":
+                        {
+                            hex = hex.Insert(hex.Length, "3");
+                        }
+                        break;
+                    case "0100":
+                        {
+                            hex = hex.Insert(hex.Length, "4");
+                        }
+                        break;
+                    case "0101":
+                        {
+                            hex = hex.Insert(hex.Length, "5");
+                        }
+                        break;
+                    case "0110":
+                        {
+                            hex = hex.Insert(hex.Length, "6");
+                        }
+                        break;
+                    case "0111":
+                        {
+                            hex = hex.Insert(hex.Length, "7");
+                        }
+                        break;
+                    case "1000":
+                        {
+                            hex = hex.Insert(hex.Length, "8");
+                        }
+                        break;
+                    case "1001":
+                        {
+                            hex = hex.Insert(hex.Length, "9");
+                        }
+                        break;
+                    case "1010":
+                        {
+                            hex = hex.Insert(hex.Length, "A");
+                        }
+                        break;
+                    case "1011":
+                        {
+                            hex = hex.Insert(hex.Length, "B");
+                        }
+                        break;
+                    case "1100":
+                        {
+                            hex = hex.Insert(hex.Length, "C");
+                        }
+                        break;
+                    case "1101":
+                        {
+                            hex = hex.Insert(hex.Length, "D");
+                        }
+                        break;
+                    case "1110":
+                        {
+                            hex = hex.Insert(hex.Length, "E");
+                        }
+                        break;
+                    case "1111":
+                        {
+                            hex = hex.Insert(hex.Length, "F");
+                        }
+                        break;
+                }
+            }
             return hex;
         }
         public string HexToBin(string hex)
