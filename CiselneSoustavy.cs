@@ -40,9 +40,9 @@ namespace prevody
             int i = hex.Length - 1;
             int mocnina = 0;
             int Dec = 0;
-            while(hex.Length>0)
+            while (hex.Length > 0)
             {
-                if(hex[i]>='0'&&hex[i]<='9')
+                if (hex[i] >= '0' && hex[i] <= '9')
                 {
                     int cislo = int.Parse(hex[i].ToString());
                     int moc = 1;
@@ -53,17 +53,89 @@ namespace prevody
                     moc *= cislo;
                     Dec += moc;
                 }
-                //if(hexcislo[i]<=9)
-                cifra = hexcislo[i]-'0'
-                //else
+                else if (hex[i] == 'A')
                 {
-                    cifra = hexCislo[i] - 'a' + 10;
+                    int cislo = 10;
+                    int moc = 1;
+                    for (int j = mocnina; j > 0; j--)
+                    {
+                        moc *= 16;
+                    }
+                    moc *= cislo;
+                    Dec += moc;
                 }
-              
+                else if (hex[i] == 'B')
+                {
+                    int cislo = 11;
+                    int moc = 1;
+                    for (int j = mocnina; j > 0; j--)
+                    {
+                        moc *= 16;
+                    }
+                    moc *= cislo;
+                    Dec += moc;
+                }
+                else if (hex[i] == 'C')
+                {
+                    int cislo = 12;
+                    int moc = 1;
+                    for (int j = mocnina; j > 0; j--)
+                    {
+                        moc *= 16;
+                    }
+                    moc *= cislo;
+                    Dec += moc;
+                }
+                else if (hex[i] == 'D')
+                {
+                    int cislo = 13;
+                    int moc = 1;
+                    for (int j = mocnina; j > 0; j--)
+                    {
+                        moc *= 16;
+                    }
+                    moc *= cislo;
+                    Dec += moc;
+                }
+                else if (hex[i] == 'E')
+                {
+                    int cislo = 14;
+                    int moc = 1;
+                    for (int j = mocnina; j > 0; j--)
+                    {
+                        moc *= 16;
+                    }
+                    moc *= cislo;
+                    Dec += moc;
+                }
+                else if (hex[i] == 'F')
+                {
+                    int cislo = 15;
+                    int moc = 1;
+                    for (int j = mocnina; j > 0; j--)
+                    {
+                        moc *= 16;
+                    }
+                    moc *= cislo;
+                    Dec += moc;
+                }
                 i--;
                 mocnina++;
-                hex =hex.Remove(hex.Length - 1);
+                hex = hex.Remove(hex.Length - 1);
             }
+
+
+            /*if(hexcislo[i]<=9)
+            cifra = hexcislo[i]-'0'
+            //else
+            {
+                cifra = hexCislo[i] - 'a' + 10;
+            }
+
+            i--;
+            mocnina++;
+            hex =hex.Remove(hex.Length - 1);*/
+
             return Dec;
         }
         public string DecToHex(int dec)
@@ -91,51 +163,14 @@ namespace prevody
         public string BinToHex(string bin)
         {
             //1248
-            int delka = bin.Length;
-            string hex = "";
-            for(int i = delka-1;delka>0;i--)
-            {
-                string sub = bin.Substring(i - 3);
-                int cifra = 0;
-                if (sub[0] == '1') cifra += 8;
-                if (sub[1] == '1') cifra += 4;
-                if (sub[2] == '1') cifra += 2;
-                if (sub[3] == '1') cifra += 1;
-                if (cifra >= 0 && cifra <= 9)
-                {
-                    hex = hex.Insert(0, cifra.ToString());
-                }
-                else if (cifra == 10)
-                {
-                    hex = hex.Insert(0, 'A'.ToString());
-                }
-                else if (cifra == 11)
-                {
-                    hex = hex.Insert(0, 'B'.ToString());
-                }
-                else if (cifra == 12)
-                {
-                    hex = hex.Insert(0, 'C'.ToString());
-                }
-                else if (cifra == 13)
-                {
-                    hex = hex.Insert(0, 'D'.ToString());
-                }
-                else if (cifra == 14)
-                {
-                    hex = hex.Insert(0, 'E'.ToString());
-                }
-                else if (cifra == 15)
-                {
-                    hex = hex.Insert(0, 'F'.ToString());
-                }
-            }
+            string dec = BinToDec(bin).ToString();
+            string hex = DecToHex(int.Parse(dec));
             return hex;
         }
         public string HexToBin(string hex)
         {
-            int delka = hex.Length;
-            string bin = "";
+            string dec = HexToDec(hex).ToString();
+            string bin = DecToBin(int.Parse(dec));
             return bin;
         }
     }

@@ -38,7 +38,8 @@ namespace prevody
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            string x = textBox1.Text;
+            MessageBox.Show("Převod z Hex do Bin: " + ciselneSoustavy.HexToBin(x));
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -52,7 +53,6 @@ namespace prevody
         {
             string x = textBox1.Text;
             MessageBox.Show("Převod z Bin do Hex: " + ciselneSoustavy.BinToHex(x));
-
         }
     }
 }
