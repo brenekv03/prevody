@@ -264,8 +264,6 @@ namespace prevody
         }
         public string HexToBin(string hex)
         {
-            //string dec = HexToDec(hex).ToString();
-            //string bin = DecToBin(int.Parse(dec));
             string bin = "";
             int delka = hex.Length - 1;
             for(int i = 0; i <=delka;i++)
