@@ -21,7 +21,7 @@ namespace prevody
         private void button1_Click(object sender, EventArgs e)
         {
             string x = textBox1.Text;
-            //MessageBox.Show(ciselneSoustavy.BinToDec(x);
+            MessageBox.Show(ciselneSoustavy.BinToDec(int.Parse(x)).ToString());
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -8,20 +8,21 @@ namespace prevody
 {
     class CiselneSoustavy
     {
-        public int BinToDec(string bin)
+        public string BinToDec(int binCis)
         {
-            int d = bin.Length;
-            int mocnina = 1;
-            int desCislo = 0;
-            for(int i = d-1;i>=0;i--)
+            double vysledek = 0;
+            for (int i = 0; binCis > 0; i++)
             {
-                if(bin[i]=='1')
+                int cislo = binCis % 10;
+                if (cislo == 1)
                 {
-                    desCislo += mocnina;
+                    vysledek += Math.Pow(2, i);
                 }
+                binCis /= 10;
             }
-            return desCislo;
+            return vysledek.ToString();
         }
+
         public string DecToBin(int dec)
         {
             string retezec = "";
@@ -163,7 +164,7 @@ namespace prevody
         public string BinToHex(string bin)
         {
             //1248
-            string dec = BinToDec(bin).ToString();
+            string dec = BinToDec(int.Parse(bin));
             string hex = DecToHex(int.Parse(dec));
             return hex;
         }
