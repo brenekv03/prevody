@@ -264,8 +264,95 @@ namespace prevody
         }
         public string HexToBin(string hex)
         {
-            string dec = HexToDec(hex).ToString();
-            string bin = DecToBin(int.Parse(dec));
+            //string dec = HexToDec(hex).ToString();
+            //string bin = DecToBin(int.Parse(dec));
+            string bin = "";
+            int delka = hex.Length - 1;
+            for(int i = 0; i <=delka;i++)
+            {
+                switch(hex[i])
+                {
+                    case '0': 
+                        {
+                            bin = bin.Insert(bin.Length, "0000");
+                        }break;
+                    case '1':
+                        {
+                            bin = bin.Insert(bin.Length, "0001");
+                        }
+                        break;
+                    case '2':
+                        {
+                            bin = bin.Insert(bin.Length, "0010");
+                        }
+                        break;
+                    case '3':
+                        {
+                            bin = bin.Insert(bin.Length, "0011");
+                        }
+                        break;
+                    case '4':
+                        {
+                            bin = bin.Insert(bin.Length, "0100");
+                        }
+                        break;
+                    case '5':
+                        {
+                            bin = bin.Insert(bin.Length, "0101");
+                        }
+                        break;
+                    case '6':
+                        {
+                            bin = bin.Insert(bin.Length, "0110");
+                        }
+                        break;
+                    case '7':
+                        {
+                            bin = bin.Insert(bin.Length, "0111");
+                        }
+                        break;
+                    case '8':
+                        {
+                            bin = bin.Insert(bin.Length, "1000");
+                        }
+                        break;
+                    case '9':
+                        {
+                            bin = bin.Insert(bin.Length, "1001");
+                        }
+                        break;
+                    case 'A':
+                        {
+                            bin = bin.Insert(bin.Length, "1010");
+                        }
+                        break;
+                    case 'B':
+                        {
+                            bin = bin.Insert(bin.Length, "1011");
+                        }
+                        break;
+                    case 'C':
+                        {
+                            bin = bin.Insert(bin.Length, "1100");
+                        }
+                        break;
+                    case 'D':
+                        {
+                            bin = bin.Insert(bin.Length, "1101");
+                        }
+                        break;
+                    case 'E':
+                        {
+                            bin = bin.Insert(bin.Length, "1110");
+                        }
+                        break;
+                    case 'F':
+                        {
+                            bin = bin.Insert(bin.Length, "1111");
+                        }
+                        break;
+                }
+            }
             return bin;
         }
     }
